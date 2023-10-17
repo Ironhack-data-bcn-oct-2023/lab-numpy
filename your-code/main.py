@@ -98,8 +98,8 @@ d_mean = d.mean()
 
 
 #15. Now we want to label the values in d. First create an empty array "f" with the same shape (i.e. 2x3x5) as d using `np.empty`.
-farray = np.empty((d.shape))
-print(farray)
+f = np.empty((d.shape))
+print(f)
 
 
 
