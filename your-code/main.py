@@ -1,9 +1,11 @@
 #1. Import the NUMPY package under the name np.
-
+import numpy as np
 
 
 #2. Print the NUMPY version and the configuration.
-
+print("numpy version: ", np.__version__)
+print("numpy configuration: ")
+np.show_config()
 
 
 #3. Generate a 2x3x5 3-dimensional array with random values. Assign the array to variable "a"
