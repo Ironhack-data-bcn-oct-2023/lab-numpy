@@ -17,7 +17,7 @@ a=np.array([[[rd.randint(0,101) for k in range(5)] for j in range(3)] for i in r
 
 # Challenge: there are at least three easy ways that use numpy to generate random arrays. How many ways can you find?
 a1=np.random.randint(101, size =(2, 3, 5)) #np.random.randint
-#a2
+a2=np.random.random((2,3,5)) #np.random.random
 
 
 
@@ -93,7 +93,8 @@ print(e)
 
 #13. Does e equal to a? Why or why not?
 print("Does e equal to a?")
-print(e==a)
+#print(e==a)
+print(np.array_equal(e,a))
 # e equals to a because it was obtaining multypling the elements of a for the elements of c, which are all 1s
 
 
@@ -142,14 +143,8 @@ for i in range(2):
             elif d_elem == d_max:
                 f[i,j,k]=100
 
-print(d)
-print(f"max value in d is {d_max}")
-print(f"min value in d is {d_min}")
-print(f"mean value of d is {d_mean}")
-print(f)
 
             
-
 
 """
 #17. Print d and f. Do you have your expected f?
