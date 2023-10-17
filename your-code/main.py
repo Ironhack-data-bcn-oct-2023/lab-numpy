@@ -28,29 +28,41 @@ print(b)
 print(a.size)
 print(b.size)
 
-"""a and b have the same size, 30"""
+'''a and b have the same size, 30'''
+
+'''
+In order to see if the sizes of the 2 arrays are the same we are going to compare them, 
+after running it it shows us True, so we can say that both have the same size 
+'''
+
+a.size == b.size
+
+
 
 #8. Are you able to add a and b? Why or why not?
 
 a + b
 
-""" We can't add a and b because they don't have the same shape/structure"""
+a.shape
+b.shape
+
+'''We can't add a and b because they don't have the same shape/structure'''
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
-a.shape
 
-b.shape
 
 c = b.transpose(1, 2, 0)
 
 c.shape
+print (c)
 
 #10. Try to add a and c. Now it should work. Assign the sum to varialbe "d". But why does it work now?
-print (c)
+
+
 d = a + c
 print(d)
 
-'''It works because now the matrix a and the new matrix created 
+''' It works because now the matrix a and the new matrix created 
 from transposing b have the same shape/structure'''
 
 #11. Print a and d. Notice the difference and relation of the two array in terms of the values? Explain.
@@ -60,24 +72,24 @@ print(d)
 
 
 ''' Altought they have the same size ,30, the values innit are 
-not the same, at the end a it hasn't changed from the begining, 
-and the new variable d is the same as b but transposed, that where all values 1 plus
-the values from a. d is a but adding 1 to every value
+not the same. Array (a)  hasn't changed from the begining, 
+and the new array (d) is the same as (b) but transposed plus array (a).
 '''
 
 #12. Multiply a and c. Assign the result to e.
 
 e = a * c
+
 print(e)
 
 
 #13. Does e equal to a? Why or why not?
 
 e == a 
-'''--> #True'''
+''' True '''
 
-''' As b was a matrix al made by 1, multipling it by the matrix a doesn't change the value of a
-making the result matrix e, equal to a'''
+''' As (b) was a array made by values = 1, multipling it by the array (a) it does not change the value from (a),
+making the result of the array (e), equal to (a)'''
 
 
 #14. Identify the max, min, and mean values in d. Assign those values to variables "d_max", "d_min", and "d_mean"
@@ -100,15 +112,17 @@ print(d)
 
 
 
-"""
+
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
+
+'''
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
 If a value equals to d_mean, assign 50 to the corresponding value in f.
 Assign 0 to the corresponding value(s) in f for d_min in d.
 Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
-"""
+'''
 
 
 f[(d_min < d) & (d_mean > d)] = 25
@@ -121,8 +135,9 @@ print(f)
 
 
 
-"""
 #17. Print d and f. Do you have your expected f?
+
+"""
 For instance, if your d is:
 array([[[1.85836099, 1.67064465, 1.62576044, 1.40243961, 1.88454931],
         [1.75354326, 1.69403643, 1.36729252, 1.61415071, 1.12104981],
@@ -162,8 +177,10 @@ Again, you don't need Numpy in this question.
 
 new_array = np.empty((2,3,5), dtype=str)
 
-new_array[(d_min < d) & (d_mean > d)] = 'A'
+new_array[(d_min < d) & (d < d_mean)] = 'A'
 new_array[(d > d_mean) & (d < d_max)] = 'B'
 new_array[d_mean == d] = 'C'
 new_array[(d_min == d)] = 'D'
 new_array[(d_max == d)] = 'E'
+
+print(new_array)
