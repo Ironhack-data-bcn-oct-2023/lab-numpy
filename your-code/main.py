@@ -128,9 +128,9 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 """
-for i in range(2):
-    for j in range(3):
-        for k in range(5):
+for i in range(len(d)):
+    for j in range(len(d[i])):
+        for k in range(len(d[i,j])):
             d_elem=d[i,j,k]
             if d_elem>d_min and d_elem<d_mean:
                 f[i,j,k]=25
@@ -189,9 +189,9 @@ Again, you don't need Numpy in this question.
 """
 f_letters = np.empty((2,3,5),str)
 
-for i in range(2):
-    for j in range(3):
-        for k in range(5):
+for i in range(len(d)):
+    for j in range(len(d[i])):
+        for k in range(len(d[i,j])):
             d_elem=d[i,j,k]
             if d_elem>d_min and d_elem<d_mean:
                 f_letters[i,j,k]='B'
